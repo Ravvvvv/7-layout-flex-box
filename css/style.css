@@ -10,67 +10,77 @@
     padding: 2px;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: stretch;
 }
 
-.head,aside,p,footer{
-border: 2px;
-
-font-size: 2em;
-padding: 10px;
-flex-basis: 25%;
-
+.head,
+aside,
+p,
+footer {
+    border: 2px;
+    font-size: 2em;
+    padding: 10px;
 
 }
+
 .head {
-align-self: flex-start;
     background-color: orange;
-  order: 1;
-
-}
-
-.aside {
-  
+    order: 1;
+    flex-basis: 100%;
 }
 
 .right {
     background-color: blueviolet;
     order: 2;
-    /*   flex-basis: 200px; */
 
-
+    flex-basis: 25%;
 }
-
 
 .left {
     order: 4;
     background-color: green;
-    /*  flex-basis: 200px; */
-
+    flex-basis: 25%;
 }
 
 .lorem {
     order: 3;
     background-color: goldenrod;
-   
+    flex-basis: 50%;
+    margin: 0;
 }
 
 .footer {
-    order:5;
+    order: 5;
     background-color: darkviolet;
-
+    flex-basis: 100%;
 
 
 }
 
-@media(min-widh: 760px) {
-    .container {
-        flex-direction: row
+@media screen and (max-width: 992px) {
+    .lorem {
+        flex-basis: 75%;
+        order: 2;
     }
-    .container{
-    flex-basis: 400px;
 
+    .left {
+        flex-basis: 100%;
+        /* order 2 zmienic */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lorem {
+        flex-basis: 100%;
+order: 2;
+    }
+
+    .left {
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    .right {
+        flex-basis: 100%;
+        order: 4;
     }
 }
